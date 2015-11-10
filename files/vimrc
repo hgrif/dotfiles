@@ -1,0 +1,36 @@
+" Use :source $MYVIMRC to reload without restart after editing
+
+set nocompatible        " get rid of Vi compatibility mode. SET FIRST!
+
+" Spaces & tabs
+set tabstop=4           " number of visual spaces per TAB
+set softtabstop=4       " number of spaces in tab when editing
+set expandtab           " tabs are spaces
+
+" Usability
+syntax enable           " enable syntax processing
+set hidden              " allow buffer switching without saving
+set visualbell          " Use visual bell instead of beeping
+
+" UI config
+set number              " show line numbers
+set cursorline          " highlight current line
+filetype indent on      " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+set ruler               " show location
+
+
+" Searching
+set ignorecase          " ignore case when searching
+set smartcase           " don't ignore case when using capitals
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+" External files
+source ~/.vimrc_python  " PEP settings
+
+" Info:
+"   - http://vim.wikia.com/wiki/Example_vimrc
+"   - http://dougblack.io/words/a-good-vimrc.html
+"   - http://svn.python.org/projects/python/trunk/Misc/Vim/vimrc

@@ -1,0 +1,44 @@
+[user]
+    name = Henk Griffioen
+    email = hgrif@users.noreply.github.com
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    uno = status -uno
+
+    # Unstage changes from the index
+    unstage = reset HEAD --
+
+    # View a pretty git log with branch tree
+    g = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+
+    # Summary
+    ll = log --stat --abbrev-commit
+
+[color]
+    ui = auto
+    interactive = auto
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+
+[diff]
+    tool = vimdiff
+
+[github]
+	user = hgrif
+
+[push]
+    default = simple
+
+# Info:
+#   - https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration  
+#   - http://michaelwales.com/articles/make-gitconfig-work-for-you/
