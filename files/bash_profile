@@ -1,1 +1,7 @@
-source ~/.git-completion
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi
+
+if [ -f "$HOME/.git-completion" ]; then
+    . "$HOME/.git-completion"
+fi
