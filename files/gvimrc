@@ -1,0 +1,4 @@
+# Set default window size for GUI
+set lines=40
+set columns=90
+set guifont=Source\ Code\ Pro:h13
