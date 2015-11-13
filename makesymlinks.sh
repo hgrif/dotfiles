@@ -20,15 +20,23 @@ olddir="$olddir_prefix$timestamp"
 
 cd $dir
 
+# Check if file exists to avoid error messages.
+# Ignore symlinked files (might not fit all use cases).
+echo "Backing up..."
 for file in *; do
-  # Check if file exists to avoid error messages.
-  # Ignore symlinked files (might not fit all use cases)
   if [[ -e ~/.$file && ! -L ~/.$file ]]
   then
-    echo "- backing up: $file from ~ to $olddir"
+    echo "- .$file from ~ to $olddir"
     mkdir -p $olddir
     mv ~/.$file $olddir/
   fi
-  echo "- symlinking: $file"
+done
+echo "Done"
+
+# Symlink, overwrite existing symlinks.
+echo "Symlinking..."
+for file in *; do
+  echo "- .$file"
   ln -sf $dir/$file ~/.$file
 done
+echo "Done"
