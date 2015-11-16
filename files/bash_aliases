@@ -1,4 +1,9 @@
-alias ls='ls -GpF --color=auto'
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='ls -GpF'
+else
+    alias ls='ls -F --color=auto'
+fi
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias lh='ls -h'
