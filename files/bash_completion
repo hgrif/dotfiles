@@ -1,1 +1,26 @@
-source ~/.git-completion
+if [[ "$(uname)" == "Darwin" && -e ~/.git-completion ]]; then
+    source ~/.git-completion
+fi
+
+if [ -z ${WEKAPATH+x} ]; then 
+    weka-classes () {
+         unzip -l $WEKAPATH/weka.jar |
+         sed -rne 's/.*(weka)\/([^g])([^$]*)\.class$/\2\3/p' |
+         tr '/' '.'
+    }
+     
+    weka-folders () {
+         unzip -l $WEKAPATH/weka.jar |
+         sed -rne 's/.*(weka)\/([^g])([^$]*)\/$/\2\3\./p' |
+         tr '/' '.'
+    }
+     
+    _completeweka() {
+        local curw=${COMP_WORDS[COMP_CWORD]}
+        local wordlist=$(weka-folders; weka-classes)
+        COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+        return 0
+    }
+
+    complete -o nospace -F _completeweka weka weka-cluster
+fi

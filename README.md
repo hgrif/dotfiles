@@ -13,11 +13,12 @@ cd dotfiles
 
 All files/folders in folder `files/` are symbolic linked to their `.`-equivalents in `~`. Existing files are backed up.
 
-# Todo:
-- Determine if profile/bash_profile/bash_rc/.. flow is OK
-- Make compatible with data-science-box
 
-
-# See also:
+# See also
 - https://github.com/michaeljsmalley/dotfiles/
 - https://github.com/tdhopper/dotfiles
+
+
+# Todo
+    * set file associations:
+        * .md: macvim?
