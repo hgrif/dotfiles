@@ -29,3 +29,5 @@ alias stop_ipynb_server="screen -ls ipython_notebook | grep Detached | cut -d. -
 # kill all screens
 alias screen_killall="screen -ls | grep Detached | cut -d. -f1 | awk '{print $1}' | xargs kill"
 
+# Only grep in in (I)Python files
+alias ipygrep='grep --include=\*.py --include=\*.ipynb --exclude-dir=\.ipynb_checkpoints'
