@@ -11,6 +11,8 @@
 
 ########## Variables
 
+set -e
+
 dir=~/projects/dotfiles/files     # dotfiles directory
 olddir_prefix=~/projects/dotfiles/bak/		# old dotfiles backup directory
 
