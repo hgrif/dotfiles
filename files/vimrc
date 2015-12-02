@@ -39,6 +39,18 @@ source ~/.vimrc_python  " PEP settings
 " Recognize .md as .markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
+" Don't expand tabs for makefiles
+autocmd FileType make setlocal noexpandtab
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Misc
 
@@ -46,6 +58,19 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " Only wrap on whitespace
 :set nolist wrap linebreak breakat&vim
+
+" vim-plug (see https://github.com/junegunn/vim-plug)
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'Valloric/YouCompleteMe'
+
+" Add plugins to &runtimepath
+" Note: run :PlugInstall to install plugins after adding new.
+call plug#end()
+
 
 " Info:
 "   - http://vim.wikia.com/wiki/Example_vimrc
