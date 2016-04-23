@@ -8,6 +8,7 @@
     br = branch
     co = checkout
     df = diff
+    dc = diff --cached
     lg = log -p
     uno = status -uno
 
@@ -42,3 +43,5 @@
 # Info:
 #   - https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration  
 #   - http://michaelwales.com/articles/make-gitconfig-work-for-you/
+[credential]
+	helper = cache --timeout=3600
