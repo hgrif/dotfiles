@@ -38,6 +38,8 @@ source ~/.vimrc_python  " PEP settings
 
 " Recognize .md as .markdown
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+" au BufNewFile,BufFilePre,BufRead R set tabstop=4 softtabstop=4 shiftwidth=4
+
 
 " Don't expand tabs for makefiles
 autocmd FileType make setlocal noexpandtab
@@ -65,12 +67,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'othree/xml.vim'
 
 " Add plugins to &runtimepath
 " Note: run :PlugInstall to install plugins after adding new.
 call plug#end()
 
+" R plugin
 
 " Info:
 "   - http://vim.wikia.com/wiki/Example_vimrc
