@@ -64,6 +64,7 @@ let g:syntastic_check_on_wq = 0
 " vim-plug (see https://github.com/junegunn/vim-plug)
 call plug#begin('~/.vim/plugged')
 
+Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
